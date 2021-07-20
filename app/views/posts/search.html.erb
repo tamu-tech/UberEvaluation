@@ -1,0 +1,13 @@
+<tbody>
+    <% @results.each do |searchresult| %>
+      <div class = "searchresultbox"></div>
+        <br><%= searchresult.shopname %></br>
+        <br><%= searchresult.shopaddress %></br>
+        <br><%= searchresult.shopcontent %></br>
+      </div>
+      
+    <% end %>
+  </tbody>
+
+
+<%= link_to 'Top', root_path %>

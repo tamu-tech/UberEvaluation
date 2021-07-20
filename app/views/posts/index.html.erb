@@ -1,0 +1,34 @@
+<h1>こんなお店がありました</h1>
+
+<h1>ユーザー検索</h1>
+<%= search_form_for @q, url: search_path do |f| %>
+  <%= f.label :shopaddress_cont, 'ユーザー名' %>
+  <%= f.search_field :shopaddress_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
+
+  <% @posts.each do |post| %>
+  <div class = "postbox">
+    <br><%= post.shopname %></br>
+    <br><%= post.shopaddress %></br>
+    <br><%= post.shopcontent %></br>
+  </div>
+  <% end %>
+  
+  <h1>どんなお店か教えてください</h1>
+
+<%= form_with(model: @post, local: true) do |f| %>
+  <br><%= f.label :shopname, 'お店の名前' %>
+  <%= f.text_field :shopname %></br>
+  <br><%= f.label :shopaddress, 'お店の住所' %>
+  <%= f.text_field :shopaddress %></br>
+  <br><%= f.label :shopcontent, '詳しく教えてください' %>
+  <%= f.text_field :shopcontent %></br>
+
+  <%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '一覧に戻る', root_path %>
+
