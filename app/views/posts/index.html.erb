@@ -1,8 +1,8 @@
-<h1>こんなお店がありました</h1>
+<h1><%= link_to 'こんなお店がありました', root_path %></h1>
 
-<h1>ユーザー検索</h1>
+<h1>近くのお店を調べてみる</h1>
 <%= search_form_for @q, url: search_path do |f| %>
-  <%= f.label :shopaddress_cont, 'ユーザー名' %>
+  <%= f.label :shopaddress_cont, 'お店の住所' %>
   <%= f.search_field :shopaddress_cont %>
   <br>
   <%= f.submit '検索' %>
@@ -17,6 +17,8 @@
   </div>
   <% end %>
   
+  <%= paginate @posts %>
+  
   <h1>どんなお店か教えてください</h1>
 
 <%= form_with(model: @post, local: true) do |f| %>
@@ -30,5 +32,5 @@
   <%= f.submit '投稿' %>
 <% end %>
 
-<%= link_to '一覧に戻る', root_path %>
+
 

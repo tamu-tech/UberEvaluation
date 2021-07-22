@@ -3,6 +3,7 @@ before_action :set_q, only: [:index, :search]
     def index
         @posts = Post.all
          @post = Post.new
+         @posts= Post.all.page(params[:page]).per(6)
     end
     
     def new
