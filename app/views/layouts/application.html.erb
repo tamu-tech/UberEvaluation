@@ -4,23 +4,28 @@
     <title>UberEvaluation</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
-    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style type="text/css">
+     <!--
+     a:link { color:white; text-decoration:none }
+ a:visited { color:white; text-decoration:none }
+a:hover { color:white; text-decoration:none }
+a:active { color:white; text-decoration:none }
+-->
+</style>
+
+
   </head>
 
   <body>
     <%= yield %>
     
-    
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
   </body>
 </html>

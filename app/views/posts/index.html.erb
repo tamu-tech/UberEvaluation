@@ -1,25 +1,31 @@
-<h1><%= link_to 'こんなお店がありました', root_path %></h1>
+<nav class="navbar navbar-dark bg-success text-white">
 
-<h1>近くのお店を調べてみる</h1>
-<%= search_form_for @q, url: search_path do |f| %>
-  <%= f.label :shopaddress_cont, 'お店の住所' %>
-  <%= f.search_field :shopaddress_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
+<div class="navbar-brand"><%= link_to 'ピックアップしに行ったらこんなところでした', root_path %></div>
+  
+    近くのお店を調べてみる
+    <form class="form-inline">
+      <%= search_form_for @q, url: search_path do |f| %>
+        
+        <%= f.label :shopaddress_cont, 'お店の住所' %>
+        <div class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <%= f.search_field :shopaddress_cont %></div>
+        <button type="button" class="btn btn-success"><%= f.label'検索' %> </button>
+      <% end %>
+    </form>
+</nav>
 
-
-  <% @posts.each do |post| %>
-  <div class = "postbox">
-    <br><%= post.shopname %></br>
-    <br><%= post.shopaddress %></br>
-    <br><%= post.shopcontent %></br>
-  </div>
-  <% end %>
+<ul class="list-group mt-5 col-6">
+    <% @posts.each do |post| %>
+    <li class="list-group-item list-group-item-success"><br><%= post.shopname %></br></li>
+    <li class="list-group-item"><br><%= post.shopaddress %></br></li>
+    <li class="list-group-item"><br><%= post.shopcontent %></br></li>
+    <% end %>
+</ul>
+  
   
   <%= paginate @posts %>
   
-  <h1>どんなお店か教えてください</h1>
+  <h1>どんなお店だったか教えてください</h1>
 
 <%= form_with(model: @post, local: true) do |f| %>
   <br><%= f.label :shopname, 'お店の名前' %>

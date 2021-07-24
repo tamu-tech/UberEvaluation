@@ -55,4 +55,5 @@ gem 'ransack'
 
 gem 'kaminari'
 
-gem 'bootstrap-sass',       '3.2.0.0'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
