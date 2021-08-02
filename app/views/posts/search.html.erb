@@ -1,13 +1,21 @@
-<tbody>
-    <% @results.each do |searchresult| %>
-      <div class = "searchresultbox"></div>
-        <br><%= searchresult.shopname %></br>
-        <br><%= searchresult.shopaddress %></br>
-        <br><%= searchresult.shopcontent %></br>
-      </div>
+<nav class="navbar navbar-dark bg-success text-white">
+
+<div class="navbar-brand"><%= link_to 'ピックアップしに行ったらこんなところでした', root_path %><i class="fab fa-uber"></i></div>
+</nav>  
+　<div class="container">
+    <div class="row">
+     <div class="list-group list-group-flush mx-auto" style="width: 50rem;">
+    <% @results.each do |search| %>
       
-    <% end %>
-  </tbody>
+        <div class="list-group-item list-group-item-success mt-5 border-left border-right"><%= search.shopname %></div>
+        <div class="list-group-item border-left border-right"><%= search.shopaddress %></div>
+        <div class="list-group-item border-left border-right border-bottom" style="height: 8rem"><%= search.shopcontent %></div>
+      
+      <% end %>
+      </div>
+    </div>
+   </div>
+ 
 
 
-<%= link_to 'Top', root_path %>
+

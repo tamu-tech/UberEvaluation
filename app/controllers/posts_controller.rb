@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
 before_action :set_q, only: [:index, :search]
-    def index
-        @posts = Post.all
-         @post = Post.new
-         @posts= Post.all.page(params[:page]).per(6)
-    end
+  def index
+        @posts = Post.all.page(params[:page]).per(4).order("id DESC")
+        @post = Post.new
+         
+  end
     
     def new
         @post = Post.new
@@ -24,7 +24,7 @@ before_action :set_q, only: [:index, :search]
     end
     
     def search
-      @results = @q.result
+      @results = @q.result.order("id DESC")
     end
 
     
