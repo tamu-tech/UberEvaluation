@@ -14,11 +14,12 @@ before_action :set_q, only: [:index, :search]
         @post = Post.new(post_params)
 
     if @post.save
-      flash[:success] = '正常に投稿されました'
+      
       redirect_to root_path
     else
-      flash.now[:danger] = '投稿に失敗しました'
-      redirect_to root_path
+       @q = Post.ransack(params[:q])
+        @posts = Post.all.page(params[:page]).per(6).order("id DESC")
+      render action: :index
     end
         
     end

@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        shopname: お店の名前
+        shopaddress: お店の住所
+        shopcontent: お店の内容
