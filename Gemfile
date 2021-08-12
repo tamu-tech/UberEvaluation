@@ -60,3 +60,5 @@ group :production do
 end
 
 gem 'rails-i18n'
+
+gem 'google-analytics-rails'
