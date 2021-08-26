@@ -12,9 +12,7 @@ before_action :set_q, only: [:index, :search]
     
     def create
         @post = Post.new(post_params)
-
     if @post.save
-      
       redirect_to root_path
     else
        @q = Post.ransack(params[:q])

@@ -61,4 +61,3 @@ end
 
 gem 'rails-i18n'
 
-gem 'google-analytics-rails'
