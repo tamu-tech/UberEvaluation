@@ -1,0 +1,23 @@
+<header class="mb-4">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">ピックアップしに行ったらこんなところでした</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      
+      <ul class="navbar-nav">
+        <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+      </ul>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="center jumbotron">
+  <div class="text-center">
+    <h1>配達員の皆様お疲れ様です</h1>
+    <%= link_to '初めての配達員の方は会員登録', signup_path, class: 'btn btn-lg btn-primary' %>
+  </div>
+</div>
+
