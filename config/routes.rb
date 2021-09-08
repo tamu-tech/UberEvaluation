@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :create]
-  resources :posts 
+  resources :posts do
+   post "comments", to: "comments#create"
+   get "comments", to: "posts#show"
+  end
     
   get "search", to: "posts#search"
 end

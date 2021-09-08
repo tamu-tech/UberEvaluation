@@ -4,15 +4,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    name = params[:session][:name]
-        password = params[:session][:password]
-    if login(name, password)
+     name = params[:session][:name]
+     password = params[:session][:password]
+   if login(name, password)
       flash[:success] = 'ログインに成功しました。'
-      redirect_to @user
-    else
+      redirect_to posts_path
+   else
       flash.now[:danger] = 'ログインに失敗しました。'
       render :new
-    end
+   end
   end
 
   def destroy

@@ -1,19 +1,27 @@
 class PostsController < ApplicationController
 before_action :set_q, only: [:index, :search]
+
   def index
         @posts = Post.all.page(params[:page]).per(6).order("id DESC")
         @post = Post.new
-         
+  end
+  
+  def show
+    @comment = Comment.new
+    @post = Post.new
+    @post = Post.find(params[:id])
+    @comments = @post.comments
   end
     
-    def new
+  def new
         @post = Post.new
-    end
+  end
     
     def create
-        @post = Post.new(post_params)
+       @post = Post.new(post_params)
+       @post.user= current_user
     if @post.save
-      redirect_to root_path
+      redirect_to posts_path
     else
        @q = Post.ransack(params[:q])
         @posts = Post.all.page(params[:page]).per(6).order("id DESC")
@@ -37,6 +45,7 @@ before_action :set_q, only: [:index, :search]
 
 
   # Strong Parameter
+  private
   def post_params
     params.require(:post).permit(:shopname, :shopaddress, :shopcontent)
   end

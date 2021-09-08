@@ -1,0 +1,19 @@
+<h1>投稿詳細ページ</h1>
+<h3><%= @post.shopcontent %></h3>
+
+<h2>コメント一覧</h2>
+<% @comments.each do |c| %>
+  <div>
+    
+    <%= c.content %>
+    <hr>
+  </div>
+<% end %>
+
+<%= form_with model: [@post,@comment] do |f| %>
+    <%= f.label :content, 'コメント内容' %>
+    <%= f.text_area :content %>
+    <br>
+    <%= f.submit 'コメントする' %>
+<% end %>
+<%= link_to "ホームへ戻る", posts_path %>
