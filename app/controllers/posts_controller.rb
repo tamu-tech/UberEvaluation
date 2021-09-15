@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+   before_action :require_user_logged_in
 before_action :set_q, only: [:index, :search]
 
   def index
@@ -7,10 +8,10 @@ before_action :set_q, only: [:index, :search]
   end
   
   def show
-    @comment = Comment.new
-    @post = Post.new
     @post = Post.find(params[:id])
-    @comments = @post.comments
+     @comments = @post.comments
+    @comment = Comment.new
+    @comments = Comment.all
   end
     
   def new
@@ -19,7 +20,7 @@ before_action :set_q, only: [:index, :search]
     
     def create
        @post = Post.new(post_params)
-       @post.user= current_user
+       @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path
     else

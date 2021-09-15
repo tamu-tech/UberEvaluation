@@ -1,15 +1,15 @@
 class CommentsController < ApplicationController
-  
+   before_action :require_user_logged_in
   def new
-        @comment = Comment.new
+     @comment = Comment.new
   end
+  
   def create
      @comment = Comment.new(comment_params)
      @comment.user_id = current_user.id
-     @comment.post_id = current_post.id
      logger.debug @comment.errors.inspect 
     if @comment.save
-      redirect_to post_comments_path
+     redirect_back(fallback_location: root_path)
     else
       @comments = Comment.all
       redirect_back(fallback_location: root_path)
