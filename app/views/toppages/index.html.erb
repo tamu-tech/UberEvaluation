@@ -1,17 +1,7 @@
 <header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">ピックアップしに行ったらこんなところでした</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      
-      <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
-      </ul>
-      </ul>
-    </div>
+  <nav class="navbar navbar-dark bg-success text-white">
+    <div class="navbar-brand">ピックアップしに行ったらこんなところでした</div>
+    <div class="p-2 text-white"><%= link_to 'ログイン', login_path, class: 'nav-link' %></div>
   </nav>
 </header>
 <div class="center jumbotron">

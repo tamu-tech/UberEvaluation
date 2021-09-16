@@ -9,9 +9,8 @@ before_action :set_q, only: [:index, :search]
   
   def show
     @post = Post.find(params[:id])
-     @comments = @post.comments
+    @comments = @post.comments
     @comment = Comment.new
-    @comments = Comment.all
   end
     
   def new
