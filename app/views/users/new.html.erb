@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>Sign up</h1>
+  <h1>会員登録</h1>
 </div>
 
 <div class="row">
@@ -7,22 +7,22 @@
 
     <%= form_with(model: @user, local: true) do |f| %>
       
-      <div class="form-group">
-        <%= f.label :name, 'Name' %>
-        <%= f.text_field :name, class: 'form-control' %>
+      <div class="form-group mt-5">
+        <%= f.label :name, 'ハンドルネーム' %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "本名じゃなくて大丈夫です" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :password, 'Password' %>
+      <div class="form-group mt-5">
+        <%= f.label :password, 'パスワード' %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, 'Confirmation' %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <div class="form-group mt-5">
+        <%= f.label :password_confirmation, '確認用パスワード' %>
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "パスワードをもう一度入力してください" %>
       </div>
 
-      <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+      <%= f.submit '会員登録', class: 'btn btn-success btn-block mt-5' %>
     <% end %>
   </div>
 </div>

@@ -1,20 +1,35 @@
-<h1>投稿詳細ページ</h1>
-<h3><%= @post.shopcontent %></h3>
+<nav class="navbar navbar-dark bg-success text-white">
 
-<h2>コメント一覧</h2>
-<% @comments.each do |c| %>
-  <div>
-    
-    <%= c.content %>
-    <hr>
+<div class="navbar-brand"><%= link_to 'ピックアップしに行ったらこんなところでした', posts_path %><i class="fab fa-uber"></i></div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="list-group list-group-flush mx-auto mb-5" style="width: 50rem;">
+<div class="list-group-item list-group-item-success mt-5 border-left border-right"><%= @post.shopname %></div>
+<div class="list-group-item border-left border-right border-bottom"><%= @post.shopcontent %></div>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="list-group list-group-flush mx-auto" style="width: 70rem;">
+      <h2>コメント一覧</h2>
+        <% @comments.each do |c| %>
+          <div class="list-group-item border-left border-right border-bottom"><%= c.id %>:<%= c.content %></div>
+        <% end %>
+    </div>
   </div>
-<% end %>
+
+  
+
 
 <%= form_with model: [@post,@comment] do |f| %>
-    <%= f.label :content, 'コメント内容' %>
+    <%= f.label :content, 'コメント入力欄',class: "border-bottom mt-5" %>
     <%= f.hidden_field :post_id, value: @post.id %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: 'form-control'%>
     <br>
-    <%= f.submit 'コメントする' %>
+    <%= f.submit 'コメントする',class: 'btn btn-success' %>
 <% end %>
-<%= link_to "ホームへ戻る", posts_path %>
+</div>
