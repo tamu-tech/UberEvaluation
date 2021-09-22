@@ -2,26 +2,29 @@
 <nav class="navbar navbar-dark bg-success text-white">
 
 <div class="navbar-brand"><%= link_to 'ピックアップしに行ったらこんなところでした', posts_path %><i class="fab fa-uber"></i></div>
+
   
     
     <div class="d-flex flex-row">
-       <div class = "p-2">近くのお店を調べてみる</div>
-      
+      <div class = "p-2">近くのお店を調べてみる</div>
       <div class="p-2"><%= search_form_for @q, url: search_path do |f| %></div>
       <div class="p-2"><%= f.search_field :shopaddress_cont, class: 'form-control', placeholder: "住所を入れてください" %></div>
       <div class="p-2"><%= f.submit'検索',class: 'btn btn-success' %></div>
       <% end %>
-    
    </div>
 </nav>
-  
+
+<div class="text-right">
+    <button type="button" class="btn btn-warning mt-3"><%= link_to 'ログアウト', logout_path, method: :delete %></button>
+</div>   
+
 <div class="container">
   <div class="row">
      <div class="list-group list-group-flush mx-auto" style="width: 50rem;">
-    <% @posts.each do |post| %>
-       <div class="list-group-item list-group-item-success mt-5 border-left border-right"><%= post.shopname %></div>
-       <div class="list-group-item border-left border-right"><%= post.shopaddress %></div>
-       <a href="/posts/<%= post.id %>"><div class="list-group-item border-left border-right border-bottom text-dark" style="height: 8rem;"><%= post.shopcontent %></div></a>
+    <% @posts.each do |post| %><a href="/posts/<%= post.id %>">
+       <div class="list-group-item list-group-item-success mt-5 border-left border-right border-bottom"><%= post.shopname %></div>
+       <div class="list-group-item border-left border-right border-bottom text-dark"><%= post.shopaddress %></div>
+       <div class="list-group-item border-left border-right border-bottom text-dark" style="height: 8rem;"><%= post.shopcontent %></div></a>
     <% end %>
     </div>
   </div>
@@ -61,6 +64,6 @@
 <% else %>
 d
 <% end %>
-<%= link_to 'Logout', logout_path, method: :delete, class: "text-dark" %>
+
 
 
