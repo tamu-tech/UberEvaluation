@@ -56,6 +56,7 @@ gem 'kaminari'
 
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
+  gem 'listen'
 end
 
 gem 'rails-i18n'
