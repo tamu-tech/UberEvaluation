@@ -1,0 +1,18 @@
+ja:
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
+      
+  ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        shopaddress: お店の住所
+        shopcontent: どんなお店か
+        shopname: お店の名前
