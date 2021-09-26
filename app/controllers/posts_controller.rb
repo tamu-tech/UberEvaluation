@@ -32,6 +32,7 @@ before_action :set_q, only: [:index, :search]
     
     def search
       @results = @q.result.order("id DESC")
+      @posts = Post.all.page(params[:page]).per(10).order("id DESC")
     end
 
     

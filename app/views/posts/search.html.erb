@@ -1,16 +1,23 @@
 <nav class="navbar navbar-dark bg-success text-white">
+    <div class="navbar-brand"><%= link_to 'ピックアップしに行ったらこんなところでした', posts_path, class: "link" %><i class="fab fa-uber"></i>
+    </div>
+</nav> 
 
-<div class="navbar-brand"><%= link_to 'ピックアップしに行ったらこんなところでした', posts_path %><i class="fab fa-uber"></i></div>
-</nav>  
+<div class="text-right">
+    <button type="button" class="btn btn-warning mt-3"><%= link_to 'ログアウト', logout_path, method: :delete, class: "link" %></button>
+</div>   
+
 　<div class="container">
     <div class="row">
      <div class="list-group list-group-flush mx-auto" style="width: 50rem;">
     <% @results.each do |search| %>
+        <% @posts.each do |post| %><a href="/posts/<%= post.id %>">
+        <div class="list-group-item list-group-item-success mt-5 border-left border-right text-dark"><%= search.shopname %></div>
+        <div class="list-group-item border-left border-right text-dark"><%= search.shopaddress %></div>
+        <div class="list-group-item border-left border-right border-bottom text-dark" style="height: 8rem"><%= search.shopcontent %></div>
+        </a>
       
-        <div class="list-group-item list-group-item-success mt-5 border-left border-right"><%= search.shopname %></div>
-        <div class="list-group-item border-left border-right"><%= search.shopaddress %></div>
-        <div class="list-group-item border-left border-right border-bottom" style="height: 8rem"><%= search.shopcontent %></div>
-      
+      <% end %>
       <% end %>
       </div>
     </div>
