@@ -1,13 +1,19 @@
 <header class="mb-4">
   <nav class="navbar navbar-dark bg-success text-white">
-    <div class="navbar-brand">ピックアップしに行ったらこんなところでした</div>
+    <div class="navbar-brand">ピックアップしに行ったらこんなところでした<i class="fab fa-uber"></i></div>
     <div class="p-2 text-white"><%= link_to 'ログイン', login_path, class: 'btn btn-success' %></div>
   </nav>
 </header>
-<div class="jumbotron jumbotron-fluid hero h-100">
-  <div class="text-center ">
+<div class="text-center  ">
     <h1>配達員の皆様お疲れ様です</h1>
-    <%= link_to '初めての配達員の方は会員登録', signup_path, class: 'btn btn-success btn-lg'%>
-  </div>
+    
+    <h2 class ="w-50 mx-auto mt-5" >
+       ここは、皆様がピックアップしに行ったところがどんなお店だったのか書き込む掲示版として開設させていただきました。
+       待ち時間や店員さんの態度等、皆様と共有できればなと思います。
+    </h2>
 </div>
+
+  <div class="text-center ">
+    <%= link_to '初めての配達員の方は会員登録', signup_path, class: 'btn btn-success btn-lg mt-5'%>
+  </div>
 
