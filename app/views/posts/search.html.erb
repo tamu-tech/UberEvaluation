@@ -11,14 +11,13 @@
     <div class="row">
      <div class="list-group list-group-flush mx-auto" style="width: 50rem;">
     <% @results.each do |search| %>
-        <% @posts.each do |post| %><a href="/posts/<%= post.id %>">
+    <a href="/posts/<%= search.id %>">
         <div class="list-group-item list-group-item-success mt-5 border-left border-right text-dark"><%= search.shopname %></div>
         <div class="list-group-item border-left border-right text-dark"><%= search.shopaddress %></div>
         <div class="list-group-item border-left border-right border-bottom text-dark" style="height: 8rem"><%= search.shopcontent %></div>
-        </a>
-      
+         </a>
       <% end %>
-      <% end %>
+     
       </div>
     </div>
    </div>

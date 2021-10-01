@@ -24,7 +24,7 @@ before_action :set_q, only: [:index, :search]
       redirect_to posts_path
     else
        @q = Post.ransack(params[:q])
-        @posts = Post.all.page(params[:page]).per(6).order("id DESC")
+       @posts = Post.all.page(params[:page]).per(6).order("id DESC")
       render action: :index
     end
         
@@ -32,7 +32,6 @@ before_action :set_q, only: [:index, :search]
     
     def search
       @results = @q.result.order("id DESC")
-      @posts = Post.all.page(params[:page]).per(10).order("id DESC")
     end
 
     
