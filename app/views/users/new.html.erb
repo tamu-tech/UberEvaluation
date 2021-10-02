@@ -5,25 +5,32 @@
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
 
-    <%= form_with(model: @user, local: true) do |f| %>
-      
-      <div class="form-group mt-5">
-        <%= f.label :name, 'ハンドルネーム' %>
-        <%= f.text_field :name, class: 'form-control', placeholder: "本名じゃなくて大丈夫です" %>
-      </div>
-
-      <div class="form-group mt-5">
-        <%= f.label :password, 'パスワード' %>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
-
-      <div class="form-group mt-5">
-        <%= f.label :password_confirmation, '確認用パスワード' %>
-        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "パスワードをもう一度入力してください" %>
-      </div>
-
-      <%= f.submit '会員登録', class: 'btn btn-success btn-block mt-5' %>
+<%= form_with(model: @user, local: true) do |f| %>
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+        <div class = "alert alert-success" role="alert"><%= message %></div>
     <% end %>
+  <% end %>
+      
+  <div class="form-group mt-5">
+    <%= f.label :name, 'ハンドルネーム' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "本名じゃなくて大丈夫です" %>
+  </div>
+
+  <div class="form-group mt-5">
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password, class: 'form-control' %>
+   </div>
+
+    <div class="form-group mt-5">
+      <%= f.label :password_confirmation, '確認用パスワード' %>
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "パスワードをもう一度入力してください" %>
+    </div>
+
+      <%= f.submit '会員登録', class: 'btn btn-success btn-block mt-5 mb-5' %>
+<% end %>
     <%= link_to "ログインはこちら", login_path, class: "btn btn-success mt-5" %>
+    
+    <%= link_to "ホーム画面に戻る", logout_path, method: :delete, class: "link btn btn-warning mt-5 ml-5" %>
   </div>
 </div>

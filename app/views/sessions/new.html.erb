@@ -21,9 +21,12 @@
         <%= f.password_field :password, class: 'form-control' %>
       </div>
 
-      <%= f.submit 'ログイン', class: 'btn btn-success btn-block mt-5' %>
+      <%= f.submit 'ログイン', class: 'btn btn-success btn-block mt-5 mb-5' %>
     <% end %>
 
     <%= link_to '新規会員登録はこちら', signup_path, class: "btn btn-success mt-5" %>
+    
+    <%= link_to "ホーム画面に戻る", logout_path, method: :delete, class: "link btn btn-warning mt-5 ml-5" %>
+  </div>
   </div>
 </div>
