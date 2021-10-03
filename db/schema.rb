@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_09_08_063231) do
     t.string "shopaddress"
     t.string "shopname"
     t.bigint "user_id"
-    t.bigint "comment_id"
+    t.bigint "comment_id", null: false
     t.index ["comment_id"], name: "index_posts_on_comment_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -45,6 +45,5 @@ ActiveRecord::Schema.define(version: 2021_09_08_063231) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "posts", "comments"
   add_foreign_key "posts", "users"
 end

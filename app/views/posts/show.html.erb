@@ -17,7 +17,7 @@
     <div class="list-group list-group-flush mx-auto" style="width: 70rem;">
       <h2>コメント一覧</h2>
         <% @comments.each do |c| %>
-          <div class="list-group-item border-left border-right border-bottom"><%= c.id %>:<%= c.content %></div>
+          <div class="list-group-item border-left border-right border-bottom"><%= c.username %>:<%= c.content %></div>
         <% end %>
     </div>
   </div>
@@ -26,10 +26,11 @@
 
 
 <%= form_with model: [@post,@comment] do |f| %>
-    <%= f.label :content, 'コメント入力欄',class: "border-bottom mt-5" %>
-    <%= f.hidden_field :post_id, value: @post.id %>
-    <%= f.text_area :content, class: 'form-control'%>
+コメントを投稿する
+    <%= f.text_area :username, class: 'form-control', placeholder: "名前"%>
+    <%= f.text_area :content, class: 'form-control',  placeholder: "コメント内容"%>
     <br>
+    <%= f.hidden_field :post_id, value: @post.id %>
     <%= f.submit 'コメントする',class: 'btn btn-success' %>
 <% end %>
 </div>
