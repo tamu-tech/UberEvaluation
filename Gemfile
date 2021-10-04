@@ -64,3 +64,4 @@ end
 gem 'pry-rails'
 
 
+gem 'rails_12factor', group: :production

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_08_063231) do
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", limit: 50
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -29,8 +30,6 @@ ActiveRecord::Schema.define(version: 2021_09_08_063231) do
     t.string "shopaddress"
     t.string "shopname"
     t.bigint "user_id"
-    t.bigint "comment_id", null: false
-    t.index ["comment_id"], name: "index_posts_on_comment_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
