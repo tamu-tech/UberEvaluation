@@ -1,36 +1,36 @@
 <nav class="navbar navbar-dark bg-success text-white">
-
-<div class="navbar-brand"><%= link_to 'ウバポス', posts_path,class: "link" %><i class="fab fa-uber"></i></div>
+  <div class="navbar-brand"><%= link_to 'ウバポス', posts_path,class: "link" %><i class="fab fa-uber"></i></div>
 </nav>
 
 <div class="container">
   <div class="row">
     <div class="list-group list-group-flush mx-auto mb-5" style="width: 50rem;">
-<div class="list-group-item list-group-item-success mt-5 border-left border-right"><%= @post.shopname %></div>
-<div class="list-group-item border-left border-right border-bottom"><%= @post.shopcontent %></div>
-</div>
-</div>
+    <div class="list-group-item list-group-item-success mt-5 border-left border-right"><%= @post.shopname %></div>
+    <div class="list-group-item border-left border-right border-bottom"><%= @post.shopcontent %></div>
+  </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="list-group list-group-flush mx-auto" style="width: 70rem;">
-      <h2>コメント一覧</h2>
-        <% @comments.each do |c| %>
-          <div class="list-group-item border-left border-right border-bottom"><%= c.username %>:<%= c.content %></div>
-        <% end %>
-    </div>
-  </div>
+<h2>コメント一覧</h2>
+<div class = "container border">
+    <% @comments.each do |c| %>
+      <div class = "row border">
+          <div class="col-2 list-group-item-success" style="height: 60px;">
+            <%= c.username%>:
+          </div>
+          <div class = "col" style="height: 60px;">
+            <%= c.content %>
+          </div>
+      </div>
+    <% end %>
+</div>
+    
 
   
-
-
+<div class = "mt-5 form-group mx-auto border border-success p-4" style="width: 500px;">
 <%= form_with model: [@post,@comment] do |f| %>
-コメントを投稿する
-    <%= f.text_area :username, class: 'form-control', placeholder: "名前"%>
+    <%= f.text_area :username, class: 'form-control mb-4', placeholder: "名前(省略可）", :value =>"通りすがりの配達員"%>
     <%= f.text_area :content, class: 'form-control',  placeholder: "コメント内容"%>
-    <br>
     <%= f.hidden_field :post_id, value: @post.id %>
-    <%= f.submit 'コメントする',class: 'btn btn-success' %>
+    <%= f.submit 'コメントする',class: 'btn btn-success mt-4' %>
 <% end %>
 </div>
