@@ -10,27 +10,32 @@
   </div>
 </div>
 
-<h2>コメント一覧</h2>
-<div class = "container border">
-    <% @comments.each do |c| %>
-      <div class = "row border">
-          <div class="col-2 list-group-item-success" style="height: 60px;">
-            <%= c.username%>:
-          </div>
-          <div class = "col" style="height: 60px;">
-            <%= c.content %>
-          </div>
+<div class = "container">
+  <h2>コメント一覧</h2>
+  <% @comments.each do |c| %>
+    <div class = "row">
+      <div class="list-group list-group-flush mx-auto col-xl-3">
+        <div class="list-group-item list-group-item-success border" style="height: 50px;">
+          <%= c.username%>:
+        </div>
+        <div class="list-group-item border ">
+          <%= c.content %>
+        </div>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 </div>
     
 
-  
-<div class = "mt-5 form-group mx-auto border border-success p-4" style="width: 500px;">
-<%= form_with model: [@post,@comment] do |f| %>
-    <%= f.text_area :username, class: 'form-control mb-4', placeholder: "名前(省略可）", :value =>"通りすがりの配達員"%>
-    <%= f.text_area :content, class: 'form-control',  placeholder: "コメント内容"%>
-    <%= f.hidden_field :post_id, value: @post.id %>
-    <%= f.submit 'コメントする',class: 'btn btn-success mt-4' %>
-<% end %>
+<div class = "container">
+  <div class = "mt-5 form-group mx-auto border border-success p-4">
+    <div class = "row">
+      <%= form_with model: [@post,@comment] do |f| %>
+        <%= f.text_area :username, class: 'form-control mb-4', placeholder: "名前(省略可）", :value =>"通りすがりの配達員"%>
+        <%= f.text_area :content, class: 'form-control',  placeholder: "コメント内容"%>
+        <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.submit 'コメントする',class: 'btn btn-success mt-4' %>
+      <% end %>
+    </div>
+  </div>
 </div>
