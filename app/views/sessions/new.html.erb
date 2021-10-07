@@ -4,29 +4,20 @@
 
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
-
-    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
-    
-    
+  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
     
     <div class="form-group">
-        <%= f.label :name, 'ユーザーネーム' %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-
-
-      
-      <div class="form-group mt-5">
-        <%= f.label :password, 'パスワード' %>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
-
+      <%= f.label :name, 'ユーザーネーム' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group mt-5">
+      <%= f.label :password, 'パスワード' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
       <%= f.submit 'ログイン', class: 'btn btn-success btn-block mt-5 mb-5' %>
-    <% end %>
+  <% end %>
 
     <%= link_to '新規会員登録はこちら', signup_path, class: "col-md-6 btn btn-success mt-5" %>
-    
     <%= link_to "ホーム画面に戻る", logout_path, method: :delete, class: "link btn btn-warning mt-5 ml-5 " %>
-  </div>
   </div>
 </div>

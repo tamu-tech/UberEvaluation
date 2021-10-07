@@ -46,8 +46,8 @@
   <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |message| %>
         <div class = "alert alert-success" role="alert"><%= message %></div>
+    <% end %>
   <% end %>
-<% end %>
 <div class = "row">
   <div class="col">
     <%= f.label :shopname, 'お店の名前' %>

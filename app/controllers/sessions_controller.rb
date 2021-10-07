@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-       
-  end
 
   def create
      name = params[:session][:name]
@@ -10,7 +7,7 @@ class SessionsController < ApplicationController
       flash[:success] = 'ログインに成功しました。'
       redirect_to posts_path
    else
-      flash.now[:danger] = 'ログインに失敗しました。'
+      flash[:danger] = 'ログインに失敗しました。 ユーザーネーム又は、パスワードを確認してください'
       render :new
    end
   end
