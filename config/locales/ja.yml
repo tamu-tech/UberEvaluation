@@ -6,8 +6,7 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
-      
-  ja:
+        
   activerecord:
     models:
       post: 投稿
@@ -17,7 +16,6 @@ ja:
         shopcontent: どんなお店か
         shopname: お店の名前
         
-  ja:
   activerecord:
     models:
       user: 投稿
