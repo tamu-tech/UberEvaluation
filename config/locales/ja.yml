@@ -6,20 +6,16 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
-        
+      
+  ja:
   activerecord:
     models:
-      post: 投稿
+      post: #商品モデル
     attributes:
       post:
-        shopaddress: お店の住所
-        shopcontent: どんなお店か
         shopname: お店の名前
-        
-  activerecord:
-    models:
-      user: 投稿
-    attributes:
+        shopaddress: お店の住所
+        shopcontent: どんなお店だったか
       user:
         name: ユーザーネーム
         password: パスワード
