@@ -1,19 +1,17 @@
 <header class="mb-4">
   <nav class="navbar navbar-dark bg-success text-white">
-    <div class="navbar-brand">ウバポス<i class="fab fa-uber"></i></div>
+    <div class="navbar-brand">ウバポス</div>
   </nav>
 </header>
 <div class="text-center  ">
     <h1>配達員の皆様お疲れ様です</h1>
-    
-    <h2 class ="w-70 mx-auto mt-5" >
-        配達員のための掲示版
-    </h2>
+    <h2 class ="w-70 mx-auto mt-5" >配達員のための掲示版</h2>
 </div>
 
-  <div class="text-center ">
+<div class="text-center  ">
     <%= link_to '初めての配達員の方は会員登録', signup_path, class: 'btn btn-success btn-lg mt-5'%>
-    <div class="p-2 text-white"><%= link_to 'ログイン', login_path, class: 'btn btn-success w-25 mt-5' %></div>
-    
-  </div>
+    <div class="p-2 text-white"><%= link_to 'ログイン', login_path, class: "btn btn-success btn-lg mt-5 " %></div>
+</div>
 
+
+<div class = "imagesrider mt-5 w-50 mx-auto"><%= image_tag 'rider.jpg', size: '50x50' %></div>
