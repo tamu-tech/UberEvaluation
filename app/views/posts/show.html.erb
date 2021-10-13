@@ -2,16 +2,17 @@
   <div class="navbar-brand"><%= link_to 'ウバポス', posts_path,class: "link" %><i class="fab fa-uber"></i></div>
 </nav>
 
+<h2 class = "text-center mt-5">コメント一覧</h2>
 <div class="container">
   <div class="row">
     <div class="list-group list-group-flush mx-auto mb-5" style="width: 50rem;">
-    <div class="list-group-item list-group-item-success mt-5 border-left border-right"><%= @post.shopname %></div>
+    <div class="list-group-item list-group-item-success mt-2 border-left border-right"><%= @post.shopname %></div>
     <div class="list-group-item border-left border-right border-bottom"><%= @post.shopcontent %></div>
   </div>
 </div>
 
 <div class = "container">
-  <h2>コメント一覧</h2>
+  <h2 class = "text-center">コメントする</h2>
   <% @comments.each do |c| %>
     <div class = "row">
       <div class="list-group list-group-flush mx-auto col-xl-9">

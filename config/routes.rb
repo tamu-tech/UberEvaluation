@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'toppages/index'
+  get 'toppages/explanation'
   root to: 'toppages#index'
   
   get 'login', to: 'sessions#new'

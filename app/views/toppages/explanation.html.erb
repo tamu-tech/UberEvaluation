@@ -1,0 +1,66 @@
+<header class="mb-4">
+  <nav class="navbar navbar-dark bg-success text-white">
+    <div class="navbar-brand"><%= link_to 'ウバポス', posts_path, class: "link" %></div>
+</header>
+
+<h1 class="text-center">どんな掲示版なんですか</h1>
+<h3 class="text-center mt-5">皆さんのお店のへの感想が一覧で表示されています</h3>
+<div class="container">
+  <div class="row">
+    <div class="list-group list-group-flush mx-auto" style="width: 50rem;">
+       <div class="list-group-item list-group-item-success mt-3 border-left border-right border-bottom"> ハンバーガー屋さん ウバポス支店</div>
+       <div class="list-group-item border-left border-right border-bottom text-dark">インターネットの中</div>
+       <div class="list-group-item border-left border-right border-bottom text-dark" style="height: 8rem;">管理人がかっこいい</div>
+       コメント数（10）
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center">
+  <h4 class = "click pl-5">クリックすると</h4>
+  <i class="fas fa-arrow-down fa-5x"></i>
+</div>
+<h2 class = "text-center">皆さんのお店に対するコメントが表示されます。</h2>
+<div class = "container">
+    <div class = "row">
+      <div class="list-group list-group-flush mx-auto col-xl-9">
+        <div class="list-group-item list-group-item-success border" style="height: 50px;">
+          管理人
+        </div>
+        <div class="list-group-item border ">
+          管理人がかっこいいい
+        </div>
+      </div>
+      <div class="list-group list-group-flush mx-auto col-xl-9">
+        <div class="list-group-item list-group-item-success border" style="height: 50px;">
+          管理人
+        </div>
+        <div class="list-group-item border ">
+          管理人がかっこいいい
+        </div>
+      </div>
+      <div class="list-group list-group-flush mx-auto col-xl-9">
+        <div class="list-group-item list-group-item-success border" style="height: 50px;">
+          管理人
+        </div>
+        <div class="list-group-item border ">
+          俺はブスだと思う
+        </div>
+      </div>
+    </div>
+</div>
+
+<h3 class="text-center mt-5">管理人自身も配達員をやっています。楽しいですが、<br>いろんな配達員の人と交流できる場所があればいいなと思い
+開設させていただきました。</h3>
+
+
+<div class = "text-center">
+  <div class="btn-group" role="group" aria-label="ボタングループサンプル">
+    <%= link_to '初めての配達員の方は会員登録', signup_path, class: 'btn btn-success btn-lg '%>
+    <%= link_to 'ログイン', login_path, class: "btn btn-success btn-lg pr-4" %>
+  </div>
+</div>
+
+    
+
