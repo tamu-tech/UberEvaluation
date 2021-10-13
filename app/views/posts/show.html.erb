@@ -12,7 +12,7 @@
 </div>
 
 <div class = "container">
-  <h2 class = "text-center">コメントする</h2>
+ 
   <% @comments.each do |c| %>
     <div class = "row">
       <div class="list-group list-group-flush mx-auto col-xl-9">
@@ -27,13 +27,16 @@
   <% end %>
 </div>
     
-
+ <h2 class = "text-center mt-5">コメントする</h2>
 <div class = "container">
-  <div class = "mt-5 form-group mx-auto border border-success p-4 col-xl-9">
+  <div class = " form-group mx-auto border border-success p-4 col-xl-9">
     <div class = "row">
       <div class = "col-xl-9">
       <%= form_with model: [@post,@comment] do |f| %>
-        <%= f.text_area :username, class: 'form-control mb-4', placeholder: "名前(省略可）", :value =>"通りすがりの配達員"%>
+      <% flash.each do |key, value| %>
+      <div class = "alert alert-danger" role="alert"><%= value %></div>
+    <% end %>
+        <%= f.text_area :username, class: 'form-control mb-4', placeholder: "ハンドルネーム", :value =>"通りすがりの配達員"%>
         <%= f.text_area :content, class: 'form-control',  placeholder: "コメント内容"%>
         <%= f.hidden_field :post_id, value: @post.id %>
         <%= f.submit 'コメントする',class: 'btn btn-success mt-4' %>
