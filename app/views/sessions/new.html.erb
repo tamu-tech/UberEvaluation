@@ -6,7 +6,7 @@
   <div class="col-sm-6 offset-sm-3">
   <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
     <% flash.each do |key, value| %>
-      <div class = "alert alert-success" role="alert"><%= value %></div>
+      <div class = "alert alert-danger" role="alert"><%= value %></div>
     <% end %>
     <div class="form-group">
       <%= f.label :name, 'ユーザーネーム' %>
