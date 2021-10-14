@@ -39,7 +39,7 @@
         <%= f.text_area :username, class: 'form-control mb-4', placeholder: "ハンドルネーム", :value =>"通りすがりの配達員"%>
         <%= f.text_area :content, class: 'form-control',  placeholder: "コメント内容"%>
         <%= f.hidden_field :post_id, value: @post.id %>
-        <%= f.submit 'コメントする',class: 'btn btn-success mt-4' %>
+        <%= f.submit "投稿する \uf086",class: 'btn btn-success mt-4 btn-lg' %>
         </div>
       <% end %>
     </div>
