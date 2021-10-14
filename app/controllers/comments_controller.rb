@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if @comment.save
      redirect_back(fallback_location: root_path)
     else
-      flash[:danger] = '空欄があります'
+      flash[:danger2] = '空欄があります'
       @comments = Comment.all
       redirect_back(fallback_location: root_path)
     end
