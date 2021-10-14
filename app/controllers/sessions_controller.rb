@@ -4,10 +4,9 @@ class SessionsController < ApplicationController
      name = params[:session][:name]
      password = params[:session][:password]
    if login(name, password)
-      flash[:success] = 'ログインに成功しました。'
       redirect_to posts_path
    else
-      flash[:danger] = 'ログインに失敗しました。 ユーザーネーム又は、パスワードを確認してください'
+      flash[:danger3] = 'ログインに失敗しました。 ユーザーネーム又は、パスワードを確認してください'
       render :new
    end
   end
