@@ -30,7 +30,7 @@
     <% @posts.each do |post| %><a href="/posts/<%= post.id %>">
        <div class="list-group-item list-group-item-success mt-5 border-left border-right border-bottom"><%= post.shopname %></div>
        <div class="list-group-item border-left border-right border-bottom text-dark"><%= post.shopaddress %></div>
-       <div class="list-group-item border-left border-right border-bottom text-dark" style="height: 8rem;"><%= post.shopcontent %></div></a>
+       <div class="list-group-item border-left border-right border-bottom text-dark" style="height: 6rem;"><%= post.shopcontent %></div></a>
        コメント数（<%= post.comments.count %>）
     <% end %>
     </div>
